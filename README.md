@@ -22,7 +22,7 @@ numpy、[pyworld](https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocode
 - **2番目: 平均値**  
 本システムが変換に使用する特徴量です。要素が9個の配列です。
 - **3番目～7番目: スペクトル包絡**  
-各母音のスペクトル包絡です。それぞれ要素が513個の配列です。
+各母音のスペクトル包絡です。
 ### voice_convert(s1, a, b1, s2, b2, sample_rate, r)
 声質変換を行う関数です。
 #### 引数
@@ -39,8 +39,8 @@ numpy、[pyworld](https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocode
 - **sample_rate**  
 変換する音声のサンプリング周波数です。
 - **r**  
-WORLDのaperiodicityの変換を行う際に使用するパラメータです。0.0と1.0の間の数値を指定します。  
-とりあえず0.6～1.0あたりの数を与えておけば問題なく利用できます。
+周波数が高い領域に掛ける倍率です。0.0と1.0の間の数値を指定します。  
+低い値に設定すると、変換後の音声のノイズがある程度軽減されます。
 #### 戻り値
 3要素のタプルが戻ります。各要素の内容は、順に、スペクトル包絡、aperiodicity、基本周波数です。  
 そのままpyworldのsynthesize関数に与えることができます。
