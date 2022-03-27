@@ -4,6 +4,7 @@
 
 import pyworld as pw
 import numpy as np
+import time
 
 #処理用関数の定義
 #所定の範囲を切り出して平均
@@ -144,15 +145,15 @@ def estimate_division_pos(a, i, u, e, o, sample_rate):
 #平均値を計算
 def average_calculate(b, s):
     a = []
-    a.append(average(spec_a, 0, b[0]))
-    a.append(average(spec_a, b[0], b[1]))
-    a.append(average(spec_a, b[1], b[2]))
-    a.append(average(spec_a, b[2], b[3]))
-    a.append(average(spec_a, b[3], b[4]))
-    a.append(average(spec_a, b[4], b[5]))
-    a.append(average(spec_a, b[5], b[6]))
-    a.append(average(spec_a, b[6], b[7]))
-    a.append(average(spec_a, b[7], len(s)))
+    a.append(average(s, 0, b[0]))
+    a.append(average(s, b[0], b[1]))
+    a.append(average(s, b[1], b[2]))
+    a.append(average(s, b[2], b[3]))
+    a.append(average(s, b[3], b[4]))
+    a.append(average(s, b[4], b[5]))
+    a.append(average(s, b[5], b[6]))
+    a.append(average(s, b[6], b[7]))
+    a.append(average(s, b[7], len(s)))
     return a
 
 #声質変換
