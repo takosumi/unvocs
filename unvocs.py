@@ -4,7 +4,6 @@
 
 import pyworld as pw
 import numpy as np
-import time
 
 #処理用関数の定義
 #所定の範囲を切り出して平均
